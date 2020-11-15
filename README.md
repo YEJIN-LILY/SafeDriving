@@ -7,7 +7,7 @@ Detect eyes->Count time(when eyes closed)->if the count up to 3->alarm🔥
 RasberryPi, opencv, webcam
 
 ### 🌼 How to install openCV in your RasberryPi
-🔥 Make sure there's not exists any opencv file in your RasberryPi   
+🔥 Make sure there's no opencv file exists in your RasberryPi   
 1. Check your RasberryPi OS version
 ```
 $ cat /etc/*release*
