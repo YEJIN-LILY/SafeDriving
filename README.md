@@ -79,3 +79,20 @@ $ sudo ldconfig
 
 9. Finish
 <img src="https://user-images.githubusercontent.com/57944153/99189710-d3b6ed00-27a5-11eb-88b4-37a8b0c0276d.PNG" width="600" height="200"/>
+
+### 🌼 Install several libaries
+
+1. Install dlib prerequisites
+```
+$ sudo apt-get update
+$ sudo apt-get install build-essential cmake
+$ sudo apt-get install libgtk-3-dev
+$ sudo apt-get install libboost-all-dev
+```
+
+2. Use pip to install dlib with Python bindings
+```
+$ pip install scipy
+$ pip install dlib
+```
+⚡ It could take more than 2 hours, so just take a rest.
