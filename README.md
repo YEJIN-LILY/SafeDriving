@@ -80,7 +80,7 @@ $ sudo ldconfig
 9. Finish
 <img src="https://user-images.githubusercontent.com/57944153/99189710-d3b6ed00-27a5-11eb-88b4-37a8b0c0276d.PNG" width="600" height="200"/>
 
-### 🌼 Install several libraries
+### 🌼 Install several Libraries
 
 1. Install dlib prerequisites
 ```
