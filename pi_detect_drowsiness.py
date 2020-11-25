@@ -138,7 +138,6 @@ try:
 			break
 	# do a bit of cleanup
 	cv2.destroyAllWindows()
-	vs.stop()
 finally:
 	print("Cleaning up")
 	GPIO.cleanup()
