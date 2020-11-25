@@ -96,3 +96,13 @@ $ pip install scipy
 $ pip install dlib
 ```
 ⚡ It could take more than 2 hours, so just take a rest.
+
+### 🌼 To run the code
+🔥 Make sure haarcascade_frontalface_default.xml/shape_predictor_68_face_landmarks.dat files are in the same directory with thd code
+
+```
+python pi_detect_drowsiness.py --cascade haarcascade_frontalface_default.xml \
+	--shape-predictor shape_predictor_68_face_landmarks.dat
+```
+
+
