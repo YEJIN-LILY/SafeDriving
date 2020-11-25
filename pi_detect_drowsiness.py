@@ -12,7 +12,7 @@ import cv2
 
 GPIO.setmode(GPIO.BCM)
 
-# 피에조 번호로 
+# 피에조 번호로 바꿔주세요
 led_pin1=14
 led_pin2=15
 
