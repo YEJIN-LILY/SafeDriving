@@ -16,7 +16,6 @@ gpio_pin=13
 scale = [261, 392]
 GPIO.setup(gpio_pin,GPIO.OUT)
 #gpio_pin의 주파수 100인 pwm 인스턴스 생성
-# duty cycle을 100%로 시작
 p = GPIO.PWM(gpio_pin, 100)
 GPIO.output(gpio_pin,True)
 
@@ -107,14 +106,18 @@ try:
 			# 임계값(0.3)보다 작으면 카운터를 증가시킨다
 			if ear < EYE_AR_THRESH:
 				COUNTER += 1
+				
 				# 카운터가 임계값(16)보다 크면 
 				# 알람을 울린다
-				
 				if COUNTER >= EYE_AR_CONSEC_FRAMES:
+					# duty cycle을 100%로 시작
+					# duty cycle을  90%로 변경
 					p.start(100)
 					p.ChangeDutyCycle(90)
 					p.ChangeFrequency(scale[0])
 					time.sleep(1)
+					
+					# 프레임에 "ALAM ON!" 알림
 					cv2.putText(frame, "ALAM ON!", (10, 30),cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
 				else:
 					p.stop()
