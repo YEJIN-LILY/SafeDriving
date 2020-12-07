@@ -13,7 +13,7 @@ GPIO.setwarnings(False)
 
 # 피에조 번호 할당
 gpio_pin=13
-scale = [261, 392]
+scale = [261]
 GPIO.setup(gpio_pin,GPIO.OUT)
 #gpio_pin의 주파수 100인 pwm 인스턴스 생성
 p = GPIO.PWM(gpio_pin, 100)
