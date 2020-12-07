@@ -37,7 +37,6 @@ try:
 	ap = argparse.ArgumentParser()
 	ap.add_argument("-c", "--cascade", required=True,help = "path to where the face cascade resides")
 	ap.add_argument("-p", "--shape-predictor", required=True,help="path to facial landmark predictor")
-	# ap.add_argument("-a", "--alarm", type=int, default=0,help="boolean used to indicate if TrafficHat should be used")
 	args = vars(ap.parse_args())
 	
 	# 임계값 지정
@@ -61,7 +60,7 @@ try:
 	if vs.isOpened()==False:
 		exit()
 	time.sleep(1.0)
-	# ---------------------------------------------------------------------
+	
 	# 비디오 실행중 프레임 반복
 	while True:
                 
@@ -101,7 +100,7 @@ try:
 			rightEyeHull = cv2.convexHull(rightEye)
 			cv2.drawContours(frame, [leftEyeHull], -1, (0, 255, 0), 1)
 			cv2.drawContours(frame, [rightEyeHull], -1, (0, 255, 0), 1)
-			# ---------------------------------------------------------------------
+
 			# 눈 종횡비가 깜박임보다 작으면
 			# 임계값(0.3)보다 작으면 카운터를 증가시킨다
 			if ear < EYE_AR_THRESH:
