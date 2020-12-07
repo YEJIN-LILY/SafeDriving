@@ -117,7 +117,7 @@ try:
 					time.sleep(1)
 					
 					# 프레임에 "ALAM ON!" 알림
-					cv2.putText(frame, "ALAM ON!", (10, 30),cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
+					cv2.putText(frame, "ALARM ON!", (10, 30),cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
 				else:
 					p.stop()
 
