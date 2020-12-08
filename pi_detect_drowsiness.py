@@ -39,12 +39,11 @@ try:
 	ap.add_argument("-p", "--shape-predictor", required=True,help="path to facial landmark predictor")
 	args = vars(ap.parse_args())
 	
-	# 임계값 지정
+	# 임곗값 지정
 	EYE_AR_THRESH = 0.3
 	EYE_AR_CONSEC_FRAMES = 16
 	
 	COUNTER = 0
-	ALARM_ON = False
 	
 	# 눈 detection에 쓰일 파일들 로드
 	detector = cv2.CascadeClassifier(args["cascade"])
@@ -102,11 +101,11 @@ try:
 			cv2.drawContours(frame, [rightEyeHull], -1, (0, 255, 0), 1)
 
 			# 눈 종횡비가 깜박임보다 작으면
-			# 임계값(0.3)보다 작으면 카운터를 증가시킨다
+			# 임곗값(0.3)보다 작으면 카운터를 증가시킨다
 			if ear < EYE_AR_THRESH:
 				COUNTER += 1
 				
-				# 카운터가 임계값(16)보다 크면 
+				# 카운터가 임곗값(16)보다 크면 
 				# 알람을 울린다
 				if COUNTER >= EYE_AR_CONSEC_FRAMES:
 					# duty cycle을 100%로 시작
@@ -126,11 +125,10 @@ try:
 			else:
 				p.stop()
 				COUNTER = 0
-				ALARM_ON = False
 			
 			# 눈 가로 세로 비율을 보여준다
 			# 디버깅과 적절한 눈 가로 세로 비율 설정(300,30)
-			# 임계값, 프레임, 카운터
+			# 임곗값, 프레임, 카운터
 			cv2.putText(frame, "EAR: {:.3f}".format(ear), (300, 30),cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
 	
 		# 프레임을 보여준다
